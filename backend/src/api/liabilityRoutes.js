@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Liability = require("../modules/Liabilities");
 
-// Add a liability
+
 router.post("/liability/add", async (req, res) => {
   try {
     const { accountId, type, name, amount } = req.body;
@@ -22,7 +22,7 @@ router.post("/liability/add", async (req, res) => {
   }
 });
 
-// Update a liability
+
 router.put("/liability/update/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -35,9 +35,8 @@ router.put("/liability/update/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Failed to update liability", error: err.message });
   }
-});
+})
 
-// Delete a liability
 router.delete("/liability/delete/:id", async (req, res) => {
   try {
     const { id } = req.params;

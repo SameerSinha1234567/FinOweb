@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const FIRE_TARGET = 5_00_00_000; // 5 Cr
+const FIRE_TARGET = 50000000; 
 
 function Planning() {
   const navigate = useNavigate();
@@ -20,11 +20,11 @@ function Planning() {
   const [step, setStep] = useState(1);
   const [answer, setAnswer] = useState("");
 
-  /* ===== PRE-HAND QUESTIONS ===== */
+
   const handlePreQuestion = (type) => {
     if (type === "fire") {
       if (netWorth >= FIRE_TARGET) {
-        setAnswer("🔥 FIRE achieved! You are financially independent.");
+        setAnswer("FIRE achieved! You are financially independent.");
       } else {
         const remaining = FIRE_TARGET - netWorth;
         const years = (remaining / (monthlySavings * 12 || 1)).toFixed(1);
@@ -36,20 +36,20 @@ function Planning() {
 
     if (type === "monthly") {
       setAnswer(
-        `💰 Based on your data, you can save approximately ₹${monthlySavings.toLocaleString()} per month.`
+        `Based on your data, you can save approximately ₹${monthlySavings.toLocaleString()} per month.`
       );
     }
 
     if (type === "stability") {
       if (netWorth > 0) {
-        setAnswer("✅ You are financially stable with positive net worth.");
+        setAnswer("You are financially stable with positive net worth.");
       } else {
-        setAnswer("⚠️ Your liabilities outweigh assets. Focus on stability.");
+        setAnswer("Your liabilities outweigh assets. Focus on stability.");
       }
     }
   };
 
-  /* ===== CUSTOM QUESTION FLOW ===== */
+ 
   const handleNext = () => {
     if (!question) return;
     setStep(2);
@@ -60,11 +60,11 @@ function Planning() {
     if (!required) return;
 
     if (required <= netWorth * 0.2) {
-      setAnswer("✅ This goal is financially comfortable for you.");
+      setAnswer("This goal is financially comfortable for you.");
     } else if (required <= netWorth * 0.5) {
-      setAnswer("⚠️ Achievable, but requires careful planning.");
+      setAnswer("Achievable, but requires careful planning.");
     } else {
-      setAnswer("❌ Not advisable. This may strain your finances.");
+      setAnswer("Not advisable. This may strain your finances.");
     }
   };
 
@@ -76,7 +76,7 @@ function Planning() {
 
       <h1 style={titleStyle}> Smart Financial Planning </h1>
 
-      {/* ===== PRE-HAND QUESTIONS ===== */}
+   
       <div style={preBox}>
         <button style={preBtn} onClick={() => handlePreQuestion("fire")}>
           Can I achieve FIRE?
@@ -125,7 +125,7 @@ function Planning() {
   );
 }
 
-/* ===== STYLES ===== */
+
 const pageStyle = {
   minHeight: "100vh",
   background: "linear-gradient(135deg, #f4f9ff, #e8f1ff)",
@@ -137,7 +137,7 @@ const pageStyle = {
 
 const titleStyle = {
   fontSize: "32px",
-  marginBottom: "40px",   // 👈 increased spacing
+  marginBottom: "40px",   
   textAlign: "center"
 };
 

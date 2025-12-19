@@ -66,7 +66,7 @@ function Dashboard() {
       <h1 style={titleStyle}> Net Worth Dashboard</h1>
 
       <div style={sectionRow}>
-        {/* Assets Section */}
+      
         <div style={sectionCard}>
           <h2 style={sectionTitle}>Assets</h2>
           {assets.map(asset => (
@@ -116,7 +116,7 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Liabilities Section */}
+       
         <div style={sectionCard}>
           <h2 style={sectionTitle}>Liabilities</h2>
           {liabilities.map(liability => (
@@ -161,7 +161,7 @@ function Dashboard() {
         <h2>₹ {netWorth}</h2>
       </div>
 
-      {/* Next Page Button */}
+      
      <button
   style={nextPageBtn}
   onClick={() => navigate("/planning", { state: { assets, liabilities, netWorth } })}
@@ -173,7 +173,7 @@ function Dashboard() {
   );
 }
 
-/* STYLES: same as previous Dashboard styles... */
+
 const pageStyle = { minHeight: "100vh", background: "linear-gradient(135deg, #e8f1ff, #f4f9ff)", padding: "40px", fontFamily: "Inter, sans-serif" };
 const titleStyle = { fontSize: "32px", marginBottom: "30px" };
 const sectionRow = { display: "flex", gap: "30px" };
@@ -188,6 +188,7 @@ const deleteBtn = { padding: "6px 12px", background: "#6b7280", color: "#fff", b
 const editInput = { width: "100%", padding: "8px", borderRadius: "6px", border: "1px solid #c7d2fe", marginBottom: "6px" };
 const saveBtn = { width: "100%", padding: "8px", background: "#16a34a", color: "#fff", border: "none", borderRadius: "6px", cursor: "pointer" };
 const netWorthCard = { marginTop: "40px", padding: "25px", background: "#1e40af", color: "#fff", borderRadius: "16px", textAlign: "center", fontSize: "22px" };
+
 const nextPageBtn = {
   padding: "8px 16px",
   background: "#2563eb",

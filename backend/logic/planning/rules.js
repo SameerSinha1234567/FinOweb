@@ -1,4 +1,4 @@
-// logic/planning/rules.js
+
 
 const sipCalculator = (target, years, annualReturn = 0.12) => {
   const months = years * 12;

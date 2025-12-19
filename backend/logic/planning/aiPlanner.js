@@ -1,15 +1,12 @@
-// aiPlanner.js
+
 const askAIPlanner = async (question, context = {}) => {
-  // Basic financial context
   const netWorth = context.netWorth || 0;
   const monthlySavings = context.monthlySavings || 0;
-
-  // Normalize question for simple keyword detection
   const q = question.toLowerCase();
 
   let answer = "Based on your financial situation, this decision should be evaluated carefully.";
 
-  // Rules-based dynamic responses
+
   if (q.includes("buy") || q.includes("purchase")) {
     if (netWorth < 500000) {
       answer = "Your net worth may not support this purchase right now. Consider saving more first.";
@@ -35,7 +32,7 @@ const askAIPlanner = async (question, context = {}) => {
     }
   }
 
-  // Return structured response
+
   return {
     answer,
     userQuestion: question,

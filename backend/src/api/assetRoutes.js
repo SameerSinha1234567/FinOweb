@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Asset = require("../modules/Assets");
 
-// Add an asset
 router.post("/asset/add", async (req, res) => {
   try {
     const { accountId, type, name, value } = req.body;
@@ -22,7 +21,7 @@ router.post("/asset/add", async (req, res) => {
   }
 });
 
-// Update an asset
+
 router.put("/asset/update/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -37,7 +36,7 @@ router.put("/asset/update/:id", async (req, res) => {
   }
 });
 
-// Delete an asset
+
 router.delete("/asset/delete/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -49,7 +48,7 @@ router.delete("/asset/delete/:id", async (req, res) => {
     res.status(500).json({ message: "Failed to delete asset", error: err.message });
   }
 });
-// Get assets by account (owner)
+
 router.get("/assets/:accountId", async (req, res) => {
   try {
     const { accountId } = req.params;
